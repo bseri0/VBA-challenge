@@ -1,4 +1,14 @@
 Attribute VB_Name = "Module2"
+
+' Function to check if an item exists in a collection
+Function Contains(col As Collection, key As Variant) As Boolean
+    On Error Resume Next
+    Contains = Not (col(key) Is Nothing)
+    On Error GoTo 0
+End Function
+
+
+
 Sub CalculateStockDataWithFormatting()
     Dim ws As Worksheet
     Dim LastRow As Long
